@@ -105,7 +105,7 @@
                 </div>
                 <!-- Card footer -->
                 <div class="card-footer py-4">
-                    <nav aria-label="...">
+                    <nav aria-label="..." class="table-responsive" style="flex-wrap: wrap;">
                         {{ $categories->links("pagination::bootstrap-4") }}
                     </nav>
                 </div>

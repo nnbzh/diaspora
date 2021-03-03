@@ -25,13 +25,11 @@ Route::post('/login', 'App\Http\Controllers\Auth\LoginController@authenticate')-
 Route::middleware('\App\Http\Middleware\AdminMiddleware::class')->prefix('admin')->group(function (){
     Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
-    Route::get('/ads', function(){
-        return view('Ads.ads');
-    })->name('ads');
+    Route::get('/ads', 'App\Http\Controllers\Request\RequestController@postIndex')->name('ads');
+    Route::post('/ads/updateStatus/{id}', 'App\Http\Controllers\Request\RequestController@updatePostStatus')->name('updatePostStatus');
 
-    Route::get('/inquiries', function(){
-        return view('Inquiries.inquiries');
-    })->name('inquiries');
+    Route::get('/inquiries', 'App\Http\Controllers\Request\RequestController@index')->name('inquiries');
+    Route::post('/inquiries/update/{id}', 'App\Http\Controllers\Request\RequestController@AcceptRejectPost')->name('AcceptOrRejectPost');
 
     Route::get('/users', 'App\Http\Controllers\User\UserController@index')->name('users');
     Route::post('/users/{id}', 'App\Http\Controllers\User\UserController@updateStatus')->name('updateStatus');
