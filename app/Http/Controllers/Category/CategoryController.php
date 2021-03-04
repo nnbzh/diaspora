@@ -44,8 +44,9 @@ class CategoryController extends Controller
             ]
         );
 
-        $filePath = $request->file('img')->store('public/category_images');
+
         if($request->hasFile('img')){
+            $filePath = $request->file('img')->store('public/category_images');
             CategoryModel::create(
                 [
                     'category_name' => $request['category_name'],

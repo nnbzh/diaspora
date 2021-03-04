@@ -6,25 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/City/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/City/CityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Country/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Country/CountryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CityModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CityModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CountryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CountryModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RequestModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RequestModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RequestModelFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RequestModelFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_03_094321_create_request_models_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_03_094321_create_request_models_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_12_99999_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_12_99999_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Ads/ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Ads/ads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/City/city.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/City/city.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Country/country.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Country/country.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Inquiries/inquiries.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inquiries/inquiries.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/User/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/User/user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidenav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Category/CategoryController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +180,7 @@
       <workItem from="1614319938044" duration="31231000" />
       <workItem from="1614678334091" duration="654000" />
       <workItem from="1614732907830" duration="13932000" />
-      <workItem from="1614806131659" duration="14778000" />
+      <workItem from="1614806131659" duration="15386000" />
     </task>
     <servers />
   </component>
