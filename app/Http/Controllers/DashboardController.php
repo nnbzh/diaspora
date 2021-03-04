@@ -3,13 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RequestModel;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
 
     public function index()
     {
-        return view('index');
+        return view('index',
+            [
+                'requests' => RequestModel::orderby('likes', 'desc')->limit(6)->get(),
+                'city_user_request' =>
+                    DB::select('SELECT c.city_name as CITY_NAME,
+                                    (
+                                        SELECT count(*) from users u where u.city_id = c.id
+                                    ) AS Q_USERS,
+                                    (
+                                        SELECT count(*) from requests r where r.city_id = c.id
+                                    ) AS Q_REQUESTS
+                                from cities c order by 2 DESC')
+            ]
+        );
     }
 
     /**

@@ -73,26 +73,26 @@ class CityController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+            ['city_name' => 'required'],
+            ['city_name.required' => 'Название страны обязательное поле!']
+        );
+        CityModel::where('id', $id)->update(
+            [
+                'city_name' => $request['city_name']
+            ]
+        );
+
+        return back()->with('success', 'Успешно обнавлено!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        CityModel::where('id', $id)->delete();
+        return back()->with('success', 'Успешно удалено!');
     }
 }

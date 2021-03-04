@@ -31,7 +31,7 @@
                         <a class="nav-link @if($cURI === 'inquiries') {!! "active" !!} @endif" href="{{route('inquiries')}}">
                             <i class="ni ni-bell-55 text-primary"></i>
                             <span class="nav-link-text" id="menu-text">Запросы</span>
-                            <span style="margin-left: 20px;" class="badge badge-md badge-circle badge-floating badge-danger border-white">{{App\Models\RequestModel::where('status', 0)->count()}}</span>
+                            <span style="margin-left: 20px;" class="badge badge-md badge-circle badge-floating badge-danger border-white">{{App\Models\RequestModel::where('status', 0)->count() === 0?'':App\Models\RequestModel::where('status', 0)->count()}}</span>
                         </a>
                     </li>
                     <li class="nav-item">

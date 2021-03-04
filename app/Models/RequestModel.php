@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\CityModel;
+use App\Models\CategoryModel;
 
 class RequestModel extends Model
 {
@@ -39,6 +40,12 @@ class RequestModel extends Model
     public function city(){
         return $this->hasOne(CityModel::class, 'id', 'city_id')
             ->get('city_name')->first()->city_name;
+    }
+
+    //Get POST category
+    public function category(){
+        return $this->hasOne(CategoryModel::class, 'id', 'category_id')
+            ->get('category_name')->first()->category_name;
     }
 
 }

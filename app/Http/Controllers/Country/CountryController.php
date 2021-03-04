@@ -39,37 +39,30 @@ class CountryController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+            ['country_name' => 'required'],
+            ['country_name.required' => 'Название страны обязательное поле!']
+        );
+        CountryModel::where('id', $id)->update(
+            [
+                'country_name' => $request['country_name']
+            ]
+        );
+
+        return back()->with('success', 'Успешно обнавлено!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        CountryModel::where('id', $id)->delete();
+        return back()->with('success', 'Успешно удалено!');
     }
 }

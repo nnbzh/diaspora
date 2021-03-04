@@ -22,6 +22,7 @@
                             <th scope="col">Город</th>
                             <th scope="col" class="sort" data-sort="completion">Фото</th>
                             <th scope="col">Статус</th>
+                            <th scope="col" ></th>
 
                         </tr>
                         </thead>
@@ -83,6 +84,80 @@
                                         </form>
                                     </div>
 
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#PostModal_{{$request->id}}">Посмотреть</button>
+                                    <div class="modal fade" id="PostModal_{{$request->id}}" tabindex="-1" role="dialog" aria-labelledby="PostModalCenterTitle_{{$request->id}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="PostModalCenterTitle_{{$request->id}}"> Пост №{{$request->id}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row h-auto d-block">
+                                                        {{--                                                <h3 class="modal-title text-center mt-3 mb-3">Данные пользователя №{{ $request->id }}</h3>--}}
+                                                        <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center">
+                                                            <div class="col-lg-6 d-inline-flex flex-wrap">
+                                                                <div class="col-sm-12 text-wrap">
+                                                                    Описание: {{ $request->description }}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Город: {{ $request->city() }}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Категория: {{ $request->category() }}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Кол-во просмотров: {{ $request->seen }}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Понравилось: {{ $request->likes }}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Дата поста: {{ $request->created_at }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 d-inline-flex flex-wrap">
+                                                                <img class="img-thumbnail" src="/{{$request->photo_path}}">
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="modal-title text-center mt-3 mb-3">Связаться: </h3>
+                                                        <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center">
+                                                            <div class="col-lg-12 d-inline-flex flex-wrap">
+                                                                <div class="col-sm-12">
+                                                                    ФИО: {{$request->user()->name . $request->user()->surname}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    WhatsApp: {{$request->user()->whatsapp}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Telegram: {{$request->user()->telegram}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    IMO: {{$request->user()->IMO}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Viber: {{$request->user()->viber}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Instagram: {{$request->user()->instagram}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Facebook: {{$request->user()->facebook}}
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    Twitter: {{$request->user()->twitter}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
-            $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('ctrunity_id');
             $table->smallInteger('status')->default(1);
             $table->unsignedBigInteger('native_country_id');
             $table->longText('photo_path');
@@ -40,8 +40,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('native_country_id')->on('countries')->references('id')->onDelete('cascade');
-            $table->foreign('city_id')->on('cities')->references('id')->onDelete('cascade');
+            $table->foreign('native_country_id')->on('countries')->references('id');
+            $table->foreign('city_id')->on('cities')->references('id');
             $table->foreign('role_id')->on('roles')->references('id');
         });
     }

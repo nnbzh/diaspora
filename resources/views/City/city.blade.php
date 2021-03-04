@@ -24,6 +24,10 @@
                             <th scope="col">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertCityModal">Добавить город</button>
                             </th>
+
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+
                         </tr>
                         </thead>
                         <tbody class="list">
@@ -37,25 +41,52 @@
                                     </div>
                                 </th>
                                 <td class="budget">
-                                    254
+                                    {{ $city->overallPosts() }}
                                 </td>
                                 <td>
                           <span class="badge badge-dot mr-4">
-                            <span class="status">200</span>
+                            <span class="status">{{ $city->activePosts() }}</span>
                           </span>
                                 </td>
                                 <td class="budget">
-                                    254
+                                    {{ $city->nonActivePosts() }}
                                 </td>
                                 <td>
-    {{--                                <label class="custom-toggle">--}}
-    {{--                                    <input type="checkbox" checked>--}}
-    {{--                                    <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes"></span>--}}
-    {{--                                </label>--}}
-                                    <!-- <div class="d-flex align-items-center">
-                                      <div class="btn btn-sm btn-primary">Активный</div>
-                                      <button class="btn ni ni-fat-remove btn-sm btn-primary2" type="button"> Остановить </button>
-                                    </div> -->
+                                    <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#EditCityModal_{{$city->id}}">Изменить</button>
+                                    <div class="modal fade" id="EditCityModal_{{$city->id}}" tabindex="-1" role="dialog" aria-labelledby="EditCityModal_{{$city->id}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="EditCountryModal_{{$city->id}}"> Редактировать название города {{$city->city_name}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-sm-12">
+                                                        <form method="POST" action="{{route('updateCity', $city->id)}}">
+                                                            @csrf
+                                                            <div class="form-group">
+                                                                <input class="form-control" name="city_name" value="{{$city->city_name}}">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <form method="POST" action="{{route('deleteCity', $city->id)}}">
+                                        @csrf
+                                        <button class="btn btn-sm btn-danger" type="submit">Удалить</button>
+                                    </form>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -103,6 +134,7 @@
                     </div>
                 </div>
                 <!-- Card footer -->
+
                 <div class="card-footer py-4">
                     <nav aria-label="..." class="table-responsive" style="flex-wrap: wrap;">
                        {{ $cities->links("pagination::bootstrap-4") }}

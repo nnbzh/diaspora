@@ -94,8 +94,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                 <button class="dropdown-item btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#ProfileModal_{{$user->id}}">Профиль</button>
-                                                <a class="dropdown-item" href="#">Объявлений</a>
-{{--                                                    <a class="dropdown-item" href="#">Заблокировать</a>--}}
+                                                <button class="dropdown-item btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#UserRequestsModal_{{$user->id}}">Объявлений</button>
                                             </div>
                                         </div>
 
@@ -173,6 +172,48 @@
                                                                         Twitter: {{$user->twitter}}
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal fade" id="UserRequestsModal_{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="UserRequestsModalLabel_{{$user->id}}" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="UserRequestsModalLabe_{{$user->id}}"> Пользователь {{$user->name}}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row h-auto d-block">
+                                                            <h3 class="modal-title text-center mt-3 mb-3">Посты от {{ $user->name }}</h3>
+                                                            <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center">
+
+                                                                @if(count($user->requests()) != 0)
+                                                                    <div class="col-sm-12 d-flex justify-content-center align-items-center flex-wrap">
+                                                                        @foreach($user->requests() as $post)
+                                                                            <div class="card m-3" style="width: 18rem;">
+                                                                                <img class="card-img-top" src="/{{$post->photo_path}}" alt="Card image cap">
+                                                                                <div class="card-body">
+                                                                                    <p class="card-text text-wrap">{{$post->description}}</p>
+                                                                                </div>
+                                                                                <div class="card-footer">
+                                                                                    <p class="card-text text-wrap">Категория: {{$post->category()}}</p>
+                                                                                    <p class="card-text text-wrap">Просмотрено: {{$post->city()}}</p>
+                                                                                    <p class="card-text text-wrap">Просмотрено: {{$post->seen}}</p>
+                                                                                    <p class="card-text text-wrap">Понравилось: {{$post->likes}}</p>
+                                                                                    <p class="card-text text-wrap">Дата поста: {{$post->created_at}}</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
+                                                                @else
+                                                                    <div class="secondary">У этого пользователя нет постов.</div>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

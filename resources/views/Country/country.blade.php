@@ -24,6 +24,7 @@
                             <th scope="col">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertCountryModal">Добавить страну</button>
                             </th>
+                            <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody class="list">
@@ -37,15 +38,15 @@
                                     </div>
                                 </th>
                                 <td class="budget">
-                                    254
+                                    {{ $country->overallPosts() }}
                                 </td>
                                 <td>
                               <span class="badge badge-dot mr-4">
-                                <span class="status">200</span>
+                                <span class="status">{{ $country->activePosts() }}</span>
                               </span>
                                 </td>
                                 <td class="budget">
-                                    254
+                                    {{ $country->nonActivePosts() }}
                                 </td>
 {{--                                <td>--}}
 {{--                                    <form method="POST" action="{{route('updateStatusCategory', $country->id)}}">--}}
@@ -58,7 +59,45 @@
 {{--                                        </label>--}}
 {{--                                    </form>--}}
 {{--                                </td>--}}
+                                <td>
+                                    <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#EditCountryModal_{{$country->id}}">Изменить</button>
+                                    <div class="modal fade" id="EditCountryModal_{{$country->id}}" tabindex="-1" role="dialog" aria-labelledby="EditCountryModal_{{$country->id}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="EditCountryModal_{{$country->id}}"> Редактировать название страны {{$country->country_name}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-sm-12">
+                                                        <form method="POST" action="{{route('updateCountry', $country->id)}}">
+                                                            @csrf
+                                                            <div class="form-group">
+                                                                <input class="form-control" name="country_name" value="{{$country->country_name}}">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <form method="POST" action="{{route('deleteCountry', $country->id)}}">
+                                        @csrf
+                                        <button class="btn btn-sm btn-danger" type="submit">Удалить</button>
+                                    </form>
+
+                                </td>
                             </tr>
+
                         @endforeach
 
 
@@ -91,6 +130,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-red text-right mr-1">Удалив страну будут удалены и города этой страны!</p>
                 <!-- Card footer -->
                 <div class="card-footer py-4">
                     <nav aria-label="..." class="table-responsive" style="flex-wrap: wrap;">

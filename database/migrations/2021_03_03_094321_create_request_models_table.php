@@ -22,6 +22,7 @@ class CreateRequestModelsTable extends Migration
             $table->unsignedBigInteger('city_id');
             $table->unsignedBigInteger('seen');
             $table->unsignedSmallInteger('status')->default(0);
+            $table->bigInteger('likes')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->on('users')

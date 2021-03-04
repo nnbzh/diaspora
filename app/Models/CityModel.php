@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\RequestModel;
+use App\Models\User;
 
 class CityModel extends Model
 {
@@ -19,9 +21,27 @@ class CityModel extends Model
     //Table in the DB
     protected $table = 'cities';
 
-
-    //CITY HAS ONLY ONE COUNTRY
-    public function country_name(){
-        return $this->hasOne(\App\Models\CountryModel::class, 'id');
+    //Return cities and amount of the posts
+    public function citiesAndPosts($country_id){
+        return $this->where('country_id', $country_id)->get();
     }
+
+    //Get the quantity of posts according to the CITY
+    public function overallPosts(){
+        return $this->hasMany(RequestModel::class,'city_id', 'id')->count();
+    }
+
+    //Get the active POSTS related to the CITY
+    public function activePosts(){
+        return $this->hasMany(RequestModel::class, 'city_id', 'id')
+            ->where('status', 1)->count();
+    }
+
+    //Get the active POSTS related to the CITY
+    public function nonActivePosts(){
+        return $this->hasMany(RequestModel::class, 'city_id', 'id')
+            ->where('status', 0)->count();
+    }
+
+
 }

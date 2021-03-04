@@ -25,12 +25,13 @@ class RequestModelFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->sentence,
+            'description' => $this->faker->sentence($this->faker->randomDigitNotNull),
             'user_id' => User::inRandomOrder()->limit(1)->get('id')->first()->id,
             'category_id' => CategoryModel::inRandomOrder()->limit(1)->get('id')->first()->id,
             'city_id' => CityModel::inRandomOrder()->limit(1)->get('id')->first()->id,
-            'seen' => $this->faker->randomDigit,
-            'status' => 0
+            'seen' => $this->faker->randomNumber(),
+            'status' => 0,
+            'likes' => $this->faker->randomNumber(),
         ];
     }
 }

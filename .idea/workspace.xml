@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="" />
+    <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/City/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/City/CityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Country/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Country/CountryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CityModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CityModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CountryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CountryModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RequestModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RequestModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/RequestModelFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RequestModelFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_03_094321_create_request_models_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_03_094321_create_request_models_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_12_99999_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_12_99999_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Ads/ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Ads/ads.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/City/city.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/City/city.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Country/country.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Country/country.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inquiries/inquiries.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inquiries/inquiries.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/User/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/User/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidenav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +34,14 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -168,7 +197,8 @@
       <workItem from="1614245026052" duration="436000" />
       <workItem from="1614319938044" duration="31231000" />
       <workItem from="1614678334091" duration="654000" />
-      <workItem from="1614732907830" duration="13755000" />
+      <workItem from="1614732907830" duration="13932000" />
+      <workItem from="1614806131659" duration="14778000" />
     </task>
     <servers />
   </component>
@@ -184,14 +214,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1614161586933" />
+    <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614810820630">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1614810820630" />
+    <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1614814691169">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1440.900@0.0.1440.900" timestamp="1614814691169" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1614163161371">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1614163161371" />
-    <state x="385" y="216" width="670" height="410" key="search.everywhere.popup" timestamp="1614769860661">
-      <screen x="0" y="25" width="1440" height="875" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1614838738362">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614751419356" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614838738362" />
     <state x="385" y="216" width="670" height="410" key="search.everywhere.popup/0.25.1440.875@0.25.1440.875" timestamp="1614769860661" />
   </component>
 </project>
