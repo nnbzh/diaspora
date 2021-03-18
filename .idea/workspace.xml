@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DiasporaAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiasporaAdmin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Category/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +135,20 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ouyVTpVULPxWz83jwTEGIk2eVW" />
@@ -142,6 +158,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -165,7 +182,10 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="" />
@@ -181,11 +201,12 @@
       <workItem from="1614678334091" duration="654000" />
       <workItem from="1614732907830" duration="13932000" />
       <workItem from="1614806131659" duration="15386000" />
+      <workItem from="1616091282983" duration="4671000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="422" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614344352592">
@@ -196,22 +217,29 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1614161586933" />
-    <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614810820630">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="489" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616092667896">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1614810820630" />
+    <state x="489" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1616092667896" />
+    <state x="459" y="140" key="NewPhpClassDialog" timestamp="1616092475482">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="459" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1616092475482" />
     <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1614814691169">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1440.900@0.0.1440.900" timestamp="1614814691169" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1614163161371">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="411" y="195" key="run.anything.popup" timestamp="1616092154884">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1614163161371" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1614838738362">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="411" y="195" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616092154884" />
+    <state x="411" y="182" width="715" height="627" key="search.everywhere.popup" timestamp="1616094960633">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1614838738362" />
+    <state x="411" y="182" width="715" height="627" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1616094960633" />
     <state x="385" y="216" width="670" height="410" key="search.everywhere.popup/0.25.1440.875@0.25.1440.875" timestamp="1614769860661" />
   </component>
 </project>
