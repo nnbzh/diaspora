@@ -18,4 +18,15 @@ class CommentModel extends Model
 
     //Table in the DB
     protected $table = 'comments';
+
+    // Relationships
+    public function post() {
+        return $this->belongsTo(\App\Models\RequestModel::class, 'post_id', 'id');
+    }
+
+    // Mutators
+    public function getUserImageAttribute($src)
+    {
+        return cloudlink($src);
+    }
 }

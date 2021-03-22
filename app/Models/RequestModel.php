@@ -31,6 +31,27 @@ class RequestModel extends Model
         'photo_path' => 'storage/default_images/default_post_icon.svg'
     ];
 
+    // Mutators
+    public function getPostImageAttribute($src)
+    {
+        return cloudlink($src);
+    }
+
+    public function getUserImageAttribute($src)
+    {
+        return cloudlink($src);
+    }
+
+    public function getFullnameAttribute($src)
+    {
+        return "{$this->name} {$this->surname}";
+    }
+
+    // Relationships
+    public function comments() {
+        return $this->hasMany(\App\Models\CommentModel::class, 'post_id', 'id');
+    }
+
     //Get FUll information about user that sent request
     public function user(){
         return $this->hasOne(User::class, 'id', 'user_id')->get()->first();

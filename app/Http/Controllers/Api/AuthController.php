@@ -29,6 +29,8 @@ class AuthController extends Controller
             'password' => Hash::make($req->password),
             'name' => $req->name,
             'surname' => $req->surname,
+            'native_country_id' => 0,
+            'ctrunity_id' => 0,
         ];
         if (!filter_var($req->phone_or_email, FILTER_VALIDATE_EMAIL)) {
             $data['phone_number'] = $req->phone_or_email;
@@ -44,8 +46,10 @@ class AuthController extends Controller
     }
 
     public function login(Request $req) {
+//        !filter_var($req->phone_or_email, FILTER_VALIDATE_EMAIL)
+//            ? $params = ['phone', ];
         $user = User::where('username', $req->username)->first();
-        $error = ['message' => 'Неверный номер телефона или пароль'];
+        $error = ['message' => 'Неверный данные для входа'];
         if (!$user || !Hash::check($req->password, $user->password)) {
             return response($error, 400);
         }

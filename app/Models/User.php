@@ -14,7 +14,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    
+
     protected $fillable = [
         'surname',
         'username',
@@ -60,7 +60,13 @@ class User extends Authenticatable
 
     protected $attributes = [
         'photo_path' => 'storage/default_images/default_user_icon.svg'
-        ];
+    ];
+
+    // Mutators
+    public function getUserImageAttribute($src)
+    {
+        return cloudlink($src);
+    }
 
     //GET USER NATIVE COUNTRY
     public function country(){

@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DiasporaAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiasporaAdmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CommentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CommentModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RequestModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RequestModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +206,10 @@
       <workItem from="1614678334091" duration="654000" />
       <workItem from="1614732907830" duration="13932000" />
       <workItem from="1614806131659" duration="15386000" />
-      <workItem from="1616091282983" duration="4671000" />
+      <workItem from="1616091282983" duration="7756000" />
+      <workItem from="1616188865351" duration="670000" />
+      <workItem from="1616350313243" duration="5000" />
+      <workItem from="1616358542078" duration="12466000" />
     </task>
     <servers />
   </component>
@@ -222,10 +230,10 @@
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1614810820630" />
     <state x="489" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1616092667896" />
-    <state x="459" y="140" key="NewPhpClassDialog" timestamp="1616092475482">
+    <state x="459" y="140" key="NewPhpClassDialog" timestamp="1616368809571">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="459" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1616092475482" />
+    <state x="459" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1616368809571" />
     <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1614814691169">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
