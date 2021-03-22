@@ -22,6 +22,7 @@ class PostContract
     ];
 
     const POST_SELECT_COMMENTS = [
+        'comments.id',
         'comments.comment',
         'comments.user_id',
         'users.name',

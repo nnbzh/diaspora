@@ -30,12 +30,21 @@ Route::get('/city/list', ['\App\Http\Controllers\Api\LocationController', 'cityL
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/comment/create', ['\App\Http\Controllers\Api\PostController', 'postCommentCreate']);
+    Route::get('/comments', ['\App\Http\Controllers\Api\PostController', 'commentsList']);
+
+    Route::post('/user/edit', ['\App\Http\Controllers\Api\UserController', 'userEdit']);
+    Route::get('/user/country', ['\App\Http\Controllers\Api\UserController', 'getNativeCountry']);
+    Route::post('/user/country', ['\App\Http\Controllers\Api\UserController', 'saveNativeCountry']);
 
     Route::get('/user/show', ['\App\Http\Controllers\Api\UserController', 'userShow']);
+    Route::get('/country_users', ['\App\Http\Controllers\Api\UserController', 'countryUsers']);
 
     Route::post('/post/create', ['\App\Http\Controllers\Api\PostController', 'postCreate']);
     Route::post('/post/edit', ['\App\Http\Controllers\Api\PostController', 'postEdit']);
+    Route::get('/posts/count', ['\App\Http\Controllers\Api\PostController', 'countPosts']);
     Route::get('/posts/wait', ['\App\Http\Controllers\Api\PostController', 'waitedPosts']);
     Route::get('/posts/not_active', ['\App\Http\Controllers\Api\PostController', 'notActivePosts']);
     Route::get('/posts/active', ['\App\Http\Controllers\Api\PostController', 'activePosts']);
+    Route::post('/posts/activate', ['\App\Http\Controllers\Api\PostController', 'activatePost']);
+    Route::post('/posts/deactivate', ['\App\Http\Controllers\Api\PostController', 'deactivatePost']);
 });

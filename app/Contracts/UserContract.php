@@ -27,4 +27,12 @@ class UserContract
         'photo_path as user_image',
         'native_country_id',
     ];
+
+    const COUNTRY_USERS_SELECT = [
+        'id',
+        'username',
+        'surname',
+        'name',
+        'photo_path as user_image',
+    ];
 }

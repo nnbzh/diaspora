@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a84b37-fd88-4c71-b845-91ee712acc45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CommentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CommentModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RequestModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RequestModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Contracts/PostContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contracts/PostContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Contracts/UserContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contracts/UserContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/RequestValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/RequestValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +208,8 @@
       <workItem from="1616091282983" duration="7756000" />
       <workItem from="1616188865351" duration="670000" />
       <workItem from="1616350313243" duration="5000" />
-      <workItem from="1616358542078" duration="12466000" />
+      <workItem from="1616358542078" duration="12807000" />
+      <workItem from="1616430353432" duration="10235000" />
     </task>
     <servers />
   </component>
@@ -238,11 +238,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="595" y="325" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1440.900@0.0.1440.900" timestamp="1614814691169" />
-    <state x="411" y="195" key="run.anything.popup" timestamp="1616092154884">
+    <state x="411" y="195" key="run.anything.popup" timestamp="1616454027246">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1614163161371" />
-    <state x="411" y="195" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616092154884" />
+    <state x="411" y="195" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616454027246" />
     <state x="411" y="182" width="715" height="627" key="search.everywhere.popup" timestamp="1616094960633">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

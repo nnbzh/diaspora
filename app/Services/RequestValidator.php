@@ -36,4 +36,8 @@ class RequestValidator
         return Validator::make($req, $data, $messages);
     }
 
+    public function userEditValidate($req) {
+        //
+    }
+
 }
