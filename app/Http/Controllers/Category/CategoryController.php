@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 use App\Models\CategoryModel;
 
@@ -33,14 +35,14 @@ class CategoryController extends Controller
     {
         $request->validate(
             [
-                'category_name' => 'required|max:255',
-                'img' => 'mimes:jpg,jpeg,svg,png|max:2048'
+                // 'category_name' => 'required|max:255',
+                // 'img' => 'mimes:jpg,jpeg,svg,png|max:8192'
             ],
             [
-                'category_name.required' => 'Название категории обязательное поле!',
-                'category_name.max' => 'Название категории не должна привышать 255 символов!',
-                'img.size' => 'Фото категории не должна привышать 2Мб (2048Кб)',
-                'img.mimes' => 'Фото категории должна соответствовать расширеням: jpg, jpeg, png, svg.',
+                // 'category_name.required' => 'Название категории обязательное поле!',
+                // 'category_name.max' => 'Название категории не должна привышать 255 символов!',
+                // 'img.size' => 'Фото категории не должна привышать 8Мб (8192Кб)',
+                // 'img.mimes' => 'Фото категории должна соответствовать расширеням: jpg, jpeg, png, svg.',
             ]
         );
 
@@ -66,38 +68,30 @@ class CategoryController extends Controller
         return back()->with('success', 'Успешно добавлено!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        // dd(request()->all(), 'edit');
+        $category = CategoryModel::find($id);
+        if ($request->category_name)
+            $category->category_name = $request->category_name;
+
+            if ($request->hasFile('img')) {
+            $filePath = $request->file('img')->store('public/category_images');
+            Storage::delete(str_replace('storage', 'public', $request->image_path));
+            $category->image_path = str_replace('public', 'storage', $filePath);
+        }
+        $category->save();
+        return back()->with('success', 'Категория успешно изменена!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        dd(request()->all(), 'update');
     }
 
     public function updateStatusCategory(Request $request, $id){

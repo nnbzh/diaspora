@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\RequestModel;
+use App\Services\Push\PushNotifications;
 
 
 class RequestController extends Controller
@@ -77,12 +78,25 @@ class RequestController extends Controller
 
     //Accept the post and make it active changing its status to 1
     public function AcceptRejectPost(Request $request, $id){
+        $push = new PushNotifications;
+        $post = RequestModel::where('id', $id)->first();
+        $tokens = \App\Models\DeviceToken::where('user_id', $post->user_id)->get();
         if($request['operation'] === 'accept'){
             RequestModel::findOrFail($id)->update(
                 [
                     'status' => 1
                 ]
             );
+            $send_data = [
+                'title' => 'Ваш запрос успешно принят',
+                'body' => null,
+            ];
+            $adt = ['post_id' => $post->id];
+            try {
+                foreach ($tokens as $dt) $push->sendPush($dt->token, $send_data, $adt);
+            } catch (\Exception $e) {
+                $a = 0;
+            }
             return back()->with('success', 'Запрос под номером ' . $id . ' был успешно принят!');
         }
         else{
@@ -91,6 +105,14 @@ class RequestController extends Controller
                     'status' => 404
                 ]
             );
+            $send_data = [
+                'title' => 'Ваш запрос успешно принят',
+                'body' => null,
+            ];
+            $adt = ['post_id' => $post->id];
+            foreach ($tokens as $dt) {
+                $push->sendPush($dt->token, $send_data, $adt);
+            }
             return back()->with('success', 'Запрос под номером ' . $id . ' был успешно откланен!');
         }
     }

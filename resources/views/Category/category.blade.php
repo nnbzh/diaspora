@@ -48,7 +48,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <img class="img-thumbnail" src="/{{$category->image_path}}" alt="">
+                                                        <img class="img-thumbnail" src="{{$category->image_path}}" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +65,43 @@
                                             </label>
                                         </form>
                                     </td>
+                                    <td> <a href="#" data-toggle="modal" data-target="#update-category-modal-{{ $category->id }}">Редактировать</a> </td>
                                 </tr>
+
+                                <div class="modal fade" id="update-category-modal-{{ $category->id }}" tabindex="-1" role="dialog" aria-labelledby="InsertCategoryModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="InsertCategoryModalLabel">Заполните</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="POST" action="/admin/categories/edit/{{ $category->id }}" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-body">
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="category_name" value="{{ $category->category_name }}" placeholder="Название категорий">
+                                                        </div>
+                                                        <div class="col-md-4 edit-img-block">
+                                                            <img src="{{$category->image_path}}" width="100%">
+                                                        </div>
+                                                        <div class="custom-file mt-md-3">
+                                                            <input type="file" class="custom-file-input" name="img" class="edit-image">
+                                                            {{-- <label class="custom-file-label" for="customFile">Выберите фото</label> --}}
+                                                        </div>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Назад</button>
+                                                    <button type="submit" class="btn btn-primary">Добавить</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
@@ -112,4 +148,30 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+$('.edit-image').change(function() {
+    console.log($(this)[0].files[0]);
+    if (typeof (FileReader) != "undefined") {
+        var image_holder = $(this).parent().parent().children('.edit-img-block > img');
+        console.log(image_holder);
+        // image_holder.empty();
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            image_holder.attr('src', e.target.result);
+            // $("<img />", {
+            //     "src": e.target.result,
+            //     "width": "100%",
+            // }).appendTo(image_holder);
+            // var img = new Image();
+            // img.src = reader.result;
+            // image_holder.prepend('<span class="fa fa-times" id="remove-img" style="cursor:pointer; color:red; float:right; margin-right:3px;"></span>');
+            // image_holder.fadeIn('slow');
+        }
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else {
+        console.log("This browser does not support FileReader");
+    }
+});
+</script>
 @endsection

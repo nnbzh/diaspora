@@ -12,3 +12,15 @@ if (!function_exists('get_timestamp')) {
         return date($format, $timestamp);
     }
 }
+
+if (!function_exists('generate_chars')) {
+    function generate_chars(int $length = 8) {
+        $chars = 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789';
+        $strLen = strlen($chars);
+        $str = '';
+        for ($i=0; $i < $length; $i++) {
+            $str .= substr($chars, rand(1, $strLen) - 1, 1);
+        }
+        return $str;
+    }
+}

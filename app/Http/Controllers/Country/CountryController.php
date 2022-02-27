@@ -8,11 +8,13 @@ use App\Models\CountryModel;
 
 class CountryController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
+        $country = CountryModel::orderby('created_at', 'desc');
+        if ($req->q) $country->where('country_name', 'like', '%'.$req->q.'%');
         return view('Country.country',
             [
-                'countries' => CountryModel::orderby('created_at', 'desc')->paginate(6)
+                'countries' => $country->paginate(6)
             ]
         );
     }

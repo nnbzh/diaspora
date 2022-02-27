@@ -23,4 +23,13 @@ class LocationController extends Controller
             ->where('country_id', $req->country_id)->get();
     }
 
+    public function city(Request $req) {
+        if ($req->id) {
+            $data = City::select('id','city_name')
+                ->where('id', $req->id)
+                ->first();
+        }
+        return $data ?? [];
+    }
+
 }

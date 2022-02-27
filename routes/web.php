@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
+use App\Mail\consultationMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-Route::get('/', 'App\Http\Controllers\Auth\LoginController@index')->name('AdminLogin');
+Route::get('/polzovatelskoye-soglasheniye', function(){
+    return view('agreement');
+});
+Route::get('/', fn() => view('Auth.news'));
+Route::get('/admin/login', 'App\Http\Controllers\Auth\LoginController@index')->name('AdminLogin');
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@authenticate')->name('AdminAuth');
 
+Route::get('/support', fn() => view('support'));
+Route::post('/send', function(Request $request){
+        $mailData = array(
+            'login'     => $request['login'],
+            'text'     => $request['text'],
+           );
+           Mail::to('aimasha1980n@gmail.com')->send(new consultationMail($mailData));
+           return '<h1>Email Sent</h1>';
+});
 Route::middleware('\App\Http\Middleware\AdminMiddleware::class')->prefix('admin')->group(function (){
     Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
@@ -44,8 +57,14 @@ Route::middleware('\App\Http\Middleware\AdminMiddleware::class')->prefix('admin'
     Route::post('/cities/edit/{id}', 'App\Http\Controllers\City\CityController@update')->name('updateCity');
     Route::post('/cities/destroy/{id}', 'App\Http\Controllers\City\CityController@destroy')->name('deleteCity');
 
+    Route::get('/chats', 'App\Http\Controllers\Chat\ChatController@index')->name('chats');
+    Route::post('/chat/store', 'App\Http\Controllers\Chat\ChatController@store');
+    Route::post('/chat/edit/{id}', 'App\Http\Controllers\Chat\ChatController@update');
+    Route::post('/chat/destroy/{id}', 'App\Http\Controllers\Chat\ChatController@destroy');
+
     Route::get('/categories', 'App\Http\Controllers\Category\CategoryController@index')->name('categories');
     Route::post('/categories/store', 'App\Http\Controllers\Category\CategoryController@store')->name('storeCategory');
+    Route::post('/categories/edit/{id}', 'App\Http\Controllers\Category\CategoryController@edit')->name('editCategory');
     Route::post('/categories/{id}', 'App\Http\Controllers\Category\CategoryController@updateStatusCategory')->name('updateStatusCategory');
 
 

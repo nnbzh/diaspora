@@ -27729,7 +27729,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     box-sizing: content-box !important;
     width: auto !important;
     max-width: none !important;
-    height: auto;
     max-height: none;
     margin: 0;
     padding: 0;
@@ -29855,3 +29854,5 @@ input.datetimepicker[data-color='yellow'] + .bootstrap-datetimepicker-widget.dro
 {
     background: transparent;
 }
+
+

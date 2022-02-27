@@ -14,6 +14,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'surname',
@@ -37,29 +38,20 @@ class User extends Authenticatable
         'role_id',
         'email',
         'password',
+        'about_me',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
     protected $attributes = [
-        'photo_path' => 'storage/default_images/default_user_icon.svg'
+        'photo_path' => 'storage/default_images/default_user_icon.png'
     ];
 
     // Mutators
@@ -68,16 +60,41 @@ class User extends Authenticatable
         return cloudlink($src);
     }
 
+    // Relationships
+    public function country_chat()
+    {
+        return $this->hasManyThrough(
+            \App\Models\ChatModel::class,
+            \App\Models\CityModel::class,
+            'country_id',
+            'country_id',
+            'native_country_id',
+            'id'
+        );
+    }
+
+    public function messages() {
+        return $this->hasMany(\App\Models\MessageModel::class, 'user_id', 'id');
+    }
+
+    public function blocked_users() {
+        return $this->hasMany(\App\Models\UserBlocked::class, 'user_id');
+    }
+
+    public function blocked_me_users() {
+        return $this->hasMany(\App\Models\UserBlocked::class, 'blocked_user_id');
+    }
+
     //GET USER NATIVE COUNTRY
     public function country(){
         return $this->hasOne(\App\Models\CountryModel::class, 'id', 'native_country_id')
-                    ->get('country_name')->first()->country_name;
+                    ->get('country_name')->first()->country_name ?? null;
     }
 
     //GET USER CITY WHERE HE IS CURRENTLY LIVING
     public function city(){
         return $this->hasOne(\App\Models\CityModel::class, 'id', 'city_id')
-                    ->get('city_name')->first()->city_name;
+                    ->get('city_name')->first()->city_name ?? null;
     }
 
     //Get User's requests

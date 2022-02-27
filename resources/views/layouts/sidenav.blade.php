@@ -53,6 +53,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link @if($cURI === 'chats') {!! "active" !!} @endif" href="{{route('chats')}}">
+                            <i class="ni ni-comment text-primary"></i>
+                            <span class="nav-link-text" id="menu-text">Чаты</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link @if($cURI === 'categories') {!! "active" !!} @endif" href="{{route('categories')}}">
                             <i class="ni ni-briefcase-24 text-primary"></i>
                             <span class="nav-link-text" id="menu-text">Категории</span>
@@ -77,6 +83,3 @@
         </div>
     </div>
 </nav>
-
-
-

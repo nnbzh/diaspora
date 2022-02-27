@@ -27921,7 +27921,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     box-sizing: content-box !important;
     width: auto !important;
     max-width: none !important;
-    height: auto;
     max-height: none;
     margin: 0;
     padding: 0;

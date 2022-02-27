@@ -14,6 +14,11 @@ class LoginController extends Controller
         return view('Auth.login');
     }
 
+    public function in()
+    {
+        return view('admin');
+    }
+
     public function authenticate(Request $request){
         if(Auth::attempt(['username' => $request['login'], 'password' => $request['password'], 'role_id' => 1])){
             $request->session()->regenerate();

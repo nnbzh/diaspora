@@ -11,11 +11,13 @@ use App\Models\ChatModel;
 class CityController extends Controller
 {
 
-    public function index()
+    public function index(Request $req)
     {
+        $city = CityModel::orderby('created_at', 'desc');
+        if ($req->q) $city->where('city_name', 'like', '%'.$req->q.'%');
         return view('City.city',
             [
-                'cities' => CityModel::orderby('created_at', 'desc')->paginate(6),
+                'cities' => $city->paginate(6),
                 'countries' => CountryModel::all()
             ]
         );

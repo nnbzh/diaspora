@@ -10,8 +10,9 @@ class CategoryController extends Controller
 {
 
     public function categoryList() {
-        return Category::select('category_name', 'image_path')
+        return Category::select('id', 'category_name', 'image_path')
             ->where('status', 1)
+            ->withCount('post')
             ->get();
     }
 

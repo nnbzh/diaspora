@@ -16,7 +16,7 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('css/argon.css')}}" type="text/css">
-
+    <script src="{{asset('storage/vendor/jquery/dist/jquery.min.js')}}"></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -48,7 +48,6 @@
 
 
 
-    <script src="{{asset('storage/vendor/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('storage/vendor/js-cookie/js.cookie.js')}}"></script>
     <script src="{{asset('storage/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
     <script src="{{asset('storage/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>

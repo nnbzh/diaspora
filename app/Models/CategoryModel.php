@@ -14,9 +14,21 @@ class CategoryModel extends Model
 
     //Default value for the image path if the category photo is empty
     protected $attributes = [
-        'image_path' => 'storage/default_images/default_category_icon.svg'
+        'image_path' => 'storage/default_images/default_category_icon.png'
     ];
 
     //Table name in the DB
     protected $table = 'categories';
+
+    // Relationships
+    public function post() {
+        return $this->hasMany(\App\Models\RequestModel::class, 'category_id');
+    }
+
+    // Mutators
+    public function getImagePathAttribute($src)
+    {
+        if (!$src) $src = 'storage/default_images/default_category_icon.png';
+        return cloudlink($src);
+    }
 }
